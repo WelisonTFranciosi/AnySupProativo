@@ -26,7 +26,7 @@ GROUP_ID_ATIVO = 48846951707539
 
 ASSIGNEE_MAP = {
     "welison": 48642609483155,
-    "eliezer": 48642518395923,
+    "eliézer": 48642518395923,
 }
 
 CUSTOM_FIELDS_MAP = {
@@ -87,6 +87,7 @@ def tratar_texto_template(texto: str, nome: str = "", empresa: str = "", telefon
     nome = valor_texto(nome)
     empresa = valor_texto(empresa)
     telefone = normalizar_telefone(telefone)
+    analista = valor_texto(analista)
 
     texto = texto.replace("[NOME]", nome)
     texto = texto.replace("[Nome]", nome)
@@ -94,6 +95,8 @@ def tratar_texto_template(texto: str, nome: str = "", empresa: str = "", telefon
     texto = texto.replace("[Empresa]", empresa)
     texto = texto.replace("[Telefone]", telefone)
     texto = texto.replace("[TELEFONE]", telefone)
+    texto = texto.replace("[Analista]", analista)
+    
 
 
     return texto
